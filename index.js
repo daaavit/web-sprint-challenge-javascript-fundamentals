@@ -61,11 +61,10 @@ displayNames will be an array of strings, and each string should follow this pat
 */
 
 function animalNames(zooAnimals) {
-  zooAnimals.forEach(function(item,){
-    console.log(`name: ${item.animal_name} scientific: ${item.scientific_name}`);
-    
+  zooAnimals.forEach(function (item) {
+   console.log(`name: ${item.animal_name} scientific: ${item.scientific_name}`);
   });
-    return zooAnimals;
+  // return zooAnimals;
 }
 
 console.log(animalNames(zooAnimals));
@@ -78,7 +77,7 @@ For example: ['jackal, asiatic', .....]
 */
 
 function lowerCaseNames(zooAnimals) {
-  const lowerCase = zooAnimals.map(function(item) {
+  const lowerCase = zooAnimals.map(function (item) {
     return item.animal_name.toLowerCase();
   })
   return lowerCase;
@@ -91,9 +90,17 @@ The zoo is concerned about animals with a lower population count.
 Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
 */
 
-function lowPopulationAnimals(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowPopulationAnimals(zooAnimals) {
+  const pop = zooAnimals.filter(function (item) {
+
+    return item.population < 5;
+  });
+  return pop;
 }
+console.log(lowPopulationAnimals(zooAnimals));
+
+
+
 
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
