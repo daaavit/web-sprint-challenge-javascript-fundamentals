@@ -61,10 +61,12 @@ displayNames will be an array of strings, and each string should follow this pat
 */
 
 function animalNames(zooAnimals) {
+  const animals = [];
   zooAnimals.forEach(function (item) {
-   console.log(`name: ${item.animal_name} scientific: ${item.scientific_name}`);
+    animals.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
   });
-  // return zooAnimals;
+  return animals;
+  // return ["name: Jackal, asiatic, scientific: Canis aureus", "name: Screamer, southern, scientific: Chauna torquata", "name: White spoonbill, scientific: Platalea leucordia", "name: White-cheeked pintail, scientific: Anas bahamensis", "name: Black-backed jackal, scientific: Canis mesomelas", "name: Brolga crane, scientific: Grus rubicundus", "name: Common melba finch, scientific: Pytilia melba", "name: Pampa gray fox, scientific: Pseudalopex gymnocercus", "name: Hawk-eagle, crowned, scientific: Spizaetus coronatus", "name: Australian pelican, scientific: Pelecanus conspicillatus"];
 }
 
 console.log(animalNames(zooAnimals));
