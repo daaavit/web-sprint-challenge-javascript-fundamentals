@@ -60,9 +60,15 @@ Use animalNames to populate and return the displayNames array with only the anim
 displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
 */
 
-function animalNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function animalNames(zooAnimals) {
+  zooAnimals.forEach(function(item){
+    console.log(item.animal_name);
+    console.log(item.scientific_name);
+  });
+    return zooAnimals;
 }
+
+console.log(animalNames(zooAnimals));
 
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
