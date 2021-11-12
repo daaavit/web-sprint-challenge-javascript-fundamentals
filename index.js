@@ -61,9 +61,9 @@ displayNames will be an array of strings, and each string should follow this pat
 */
 
 function animalNames(zooAnimals) {
-  zooAnimals.forEach(function(item){
-    console.log(item.animal_name);
-    console.log(item.scientific_name);
+  zooAnimals.forEach(function(item,){
+    console.log(`name: ${item.animal_name} scientific: ${item.scientific_name}`);
+    
   });
     return zooAnimals;
 }
@@ -77,10 +77,14 @@ Using lowerCaseNames use .map() to create a new array of strings with the animal
 For example: ['jackal, asiatic', .....]
 */
 
-function lowerCaseNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowerCaseNames(zooAnimals) {
+  const lowerCase = zooAnimals.map(function(item) {
+    return item.animal_name.toLowerCase();
+  })
+  return lowerCase;
 }
 
+console.log(lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
 The zoo is concerned about animals with a lower population count. 
