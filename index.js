@@ -2,6 +2,8 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+const { toKeyAlias } = require("@babel/types");
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -129,38 +131,44 @@ console.log(USApop());
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
-function consume(/*Your Code Here */) {
-  /*Your Code Here */
+// function calculate(a, b) {
+//   return a + b;
+// }
+
+function consume(a, b, callback) {
+  return callback(a, b);
 }
+
+// console.log(consume(2, 5, add));
 
 
 /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
 
-function add(/*Your Code Here */) {
-  /*Your Code Here*/
+function add(a, b) {
+  return a + b;
 }
 
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
-function multiply(/*Your Code Here */) {
-  /*Your Code Here */
+function multiply(a, b) {
+ return a * b;
 }
 
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
-function greeting(/*Your Code Here */) {
-  return /*Your Code Here */
+function greeting(firstName, LastName) {
+  return `Hello ${firstName} ${LastName}, nice to meet you!`;
 }
 
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
@@ -170,7 +178,6 @@ function greeting(/*Your Code Here */) {
 function CuboidMaker(/*Your Code Here */) {
   /*Your Code Here */
 }
-
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
